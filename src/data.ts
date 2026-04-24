@@ -34,6 +34,12 @@ export const portfolioData = {
   ],
   education: [
     {
+      institution: "UNINOVE - Universidade Nove de Julho",
+      course: "Ciências Contábeis",
+      period: "2026 — Presente",
+      status: "Cursando"
+    },
+    {
       institution: "FIAP - Faculdade de Informática e Administração Paulista",
       course: "Web Design",
       period: "2024 — 2026",

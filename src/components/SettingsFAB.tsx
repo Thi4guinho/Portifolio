@@ -31,7 +31,7 @@ export const SettingsFAB = ({ currentLanguage, onLanguageChange }: SettingsFABPr
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-[100]">
+    <div className="fixed top-6 right-6 z-[100]">
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -49,10 +49,10 @@ export const SettingsFAB = ({ currentLanguage, onLanguageChange }: SettingsFABPr
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, x: -20, y: 20 }}
+            initial={{ opacity: 0, scale: 0.8, x: 20, y: -20 }}
             animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, x: -20, y: 20 }}
-            className="absolute bottom-16 left-0 glass p-4 rounded-2xl shadow-2xl min-w-[200px] space-y-4"
+            exit={{ opacity: 0, scale: 0.8, x: 20, y: -20 }}
+            className="absolute top-16 right-0 glass p-4 rounded-2xl shadow-2xl min-w-[200px] space-y-4"
           >
             {/* Theme Toggle */}
             <div className="space-y-2">

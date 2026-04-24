@@ -19,7 +19,9 @@ export const translations = {
       experience: "EXPERIÊNCIA",
       education: "FORMAÇÃO",
       certificates: "CERTIFICADOS",
-      contact: "CONTATO",
+      contact: "MEU CONTATO",
+      contactHeadline: "Fale diretamente ",
+      contactHeadlineAccent: "comigo",
       aboutHeadline: "Compromisso com a ",
       aboutHeadlineAccent: "excelência e resultados"
     },
@@ -45,7 +47,7 @@ export const translations = {
         {
           company: "Adidas",
           role: "Estoquista",
-          period: "07/2025 — Atual",
+          period: "07/2025 — Presente",
           description: [
             "Controle de inventário rotativo, identificando e reportando divergências e perdas.",
             "Recepcionou, conferiu e armazenou mercadorias, garantindo a integridade e organização do estoque."
@@ -64,6 +66,12 @@ export const translations = {
         }
       ],
       education: [
+        {
+          institution: "UNINOVE - Universidade Nove de Julho",
+          course: "Ciências Contábeis",
+          period: "2026 — Presente",
+          status: "Cursando"
+        },
         {
           institution: "FIAP - Faculdade de Informática e Administração Paulista",
           course: "Web Design",
@@ -97,7 +105,9 @@ export const translations = {
       experience: "EXPERIENCE",
       education: "EDUCATION",
       certificates: "CERTIFICATES",
-      contact: "CONTACT",
+      contact: "MY CONTACT",
+      contactHeadline: "Talk directly to ",
+      contactHeadlineAccent: "me",
       aboutHeadline: "Commitment to ",
       aboutHeadlineAccent: "excellence and results"
     },
@@ -143,6 +153,12 @@ export const translations = {
       ],
       education: [
         {
+          institution: "UNINOVE - Nove de Julho University",
+          course: "Accounting Sciences",
+          period: "2026 — Present",
+          status: "Enrolled"
+        },
+        {
           institution: "FIAP - Paulista Faculty of Informatics and Administration",
           course: "Web Design",
           period: "2024 — 2026",
@@ -175,7 +191,9 @@ export const translations = {
       experience: "EXPERIENCIA",
       education: "FORMACIÓN",
       certificates: "CERTIFICADOS",
-      contact: "CONTACTO",
+      contact: "MI CONTACTO",
+      contactHeadline: "Habla directamente ",
+      contactHeadlineAccent: "conmigo",
       aboutHeadline: "Compromiso con la ",
       aboutHeadlineAccent: "excelencia y resultados"
     },
@@ -220,6 +238,12 @@ export const translations = {
         }
       ],
       education: [
+        {
+          institution: "UNINOVE - Universidad Nove de Julho",
+          course: "Ciencias Contables",
+          period: "2026 — Presente",
+          status: "Cursando"
+        },
         {
           institution: "FIAP - Facultad de Informática y Administración Paulista",
           course: "Diseño Web",

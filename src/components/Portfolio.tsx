@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { portfolioData } from "../data";
-import { Badge } from "./ui/badge";
-import { Card, CardContent } from "./ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, ExternalLink, ArrowRight, Github, Linkedin, Instagram } from "lucide-react";
 import { useRef, useState } from "react";
 import { Language, translations } from "../translations";
@@ -42,7 +42,7 @@ export default function Portfolio() {
       />
 
       {/* Floating Nav */}
-      <nav className="fixed bottom-6 left-0 right-0 z-[90] px-2 md:top-8 md:bottom-auto md:right-8 md:left-auto md:px-0">
+      <nav className="fixed bottom-6 left-0 right-0 z-[90] px-2 md:top-8 md:bottom-auto md:left-1/2 md:-translate-x-1/2 md:px-0">
         <div className="glass rounded-full mx-auto px-1 md:px-6 py-2 md:py-3 flex items-center justify-between md:justify-start gap-0 md:gap-8 w-full max-w-[380px] md:w-auto overflow-hidden">
           {[
             { label: t.nav.about, id: "sobre" },
@@ -121,7 +121,7 @@ export default function Portfolio() {
                 whileTap={{ scale: 0.95 }}
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById('sobre')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
                 className="glass px-8 py-4 rounded-full font-heading uppercase tracking-widest text-sm hover:bg-accent hover:text-white transition-all flex items-center gap-2"
               >
@@ -166,23 +166,21 @@ export default function Portfolio() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 gap-6 scroll-mt-32" id="contato">
             <Card className="glass border-none rounded-none p-8">
-              <CardContent className="p-0 space-y-6">
-                <motion.div whileHover="hover" className="flex items-center gap-4 group">
-                  <motion.div 
-                    variants={{
-                      hover: { y: -5, transition: { type: "spring", stiffness: 400, damping: 10 } }
-                    }}
-                    className="w-10 h-10 md:w-12 md:h-12 rounded-full glass flex items-center justify-center group-hover:bg-accent transition-colors shrink-0"
-                  >
-                    <Mail className="w-4 h-4 md:w-5 md:h-5" />
-                  </motion.div>
-                  <div className="min-w-0">
-                    <p className="text-[10px] uppercase text-foreground/60 tracking-widest">{t.contact.email}</p>
-                    <p className="text-sm md:text-lg font-heading truncate">{portfolioData.contact.email}</p>
-                  </div>
-                </motion.div>
+              <CardContent className="p-0 space-y-8">
+                <div className="border-b border-foreground/10 pb-6">
+                  <h4 className="text-2xl md:text-3xl font-heading uppercase tracking-tighter">
+                    {(t.sections as any).contactHeadline}
+                    <span className="text-accent italic">{(t.sections as any).contactHeadlineAccent}</span>
+                  </h4>
+                  <p className="text-foreground/60 text-sm font-light mt-1">
+                    {lang === 'pt' ? 'Aqui estão meus contatos. O WhatsApp é a forma mais rápida de falar comigo:' : 
+                     lang === 'en' ? 'Here are my contacts. WhatsApp is the fastest way to reach me:' :
+                     'Aquí estão mis contactos. WhatsApp es la forma más rápida de contactarme:'}
+                  </p>
+                </div>
+                
                 <motion.a 
                   href={`https://wa.me/55${portfolioData.contact.phone.replace(/\D/g, '')}`}
                   target="_blank"
@@ -200,12 +198,12 @@ export default function Portfolio() {
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  className="flex items-center gap-4 group p-2 rounded-xl bg-accent text-white shadow-lg relative overflow-hidden"
+                  className="flex items-center gap-4 group p-4 rounded-xl bg-accent text-white shadow-lg relative overflow-hidden w-full justify-center md:justify-start"
                 >
-                  <div className="absolute top-1 right-1">
-                    <span className="flex h-1.5 w-1.5 relative">
+                  <div className="absolute top-2 right-2">
+                    <span className="flex h-2 w-2 relative">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                     </span>
                   </div>
                   
@@ -213,29 +211,47 @@ export default function Portfolio() {
                     variants={{
                       hover: { y: -5, transition: { type: "spring", stiffness: 400, damping: 10 } }
                     }}
-                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 flex items-center justify-center shrink-0"
+                    className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center shrink-0"
                   >
-                    <Phone className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                    <Phone className="w-6 h-6 text-white" />
                   </motion.div>
                   <div className="min-w-0">
-                    <p className="text-[10px] uppercase text-white/70 tracking-widest font-heading">{t.contact.phone}</p>
-                    <p className="text-sm md:text-lg font-heading truncate">{portfolioData.contact.phone}</p>
+                    <p className="text-xs uppercase text-white/70 tracking-widest font-heading">{t.contact.phone} (WhatsApp)</p>
+                    <p className="text-lg md:text-2xl font-heading truncate">{portfolioData.contact.phone}</p>
                   </div>
                 </motion.a>
-                <motion.div whileHover="hover" className="flex items-center gap-4 group">
-                  <motion.div 
-                    variants={{
-                      hover: { y: -5, transition: { type: "spring", stiffness: 400, damping: 10 } }
-                    }}
-                    className="w-10 h-10 md:w-12 md:h-12 rounded-full glass flex items-center justify-center group-hover:bg-accent transition-colors shrink-0"
-                  >
-                    <MapPin className="w-4 h-4 md:w-5 md:h-5" />
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-foreground/5">
+                  <motion.div whileHover="hover" className="flex items-center gap-4 group">
+                    <motion.div 
+                      variants={{
+                        hover: { y: -5, transition: { type: "spring", stiffness: 400, damping: 10 } }
+                      }}
+                      className="w-10 h-10 md:w-12 md:h-12 rounded-full glass flex items-center justify-center group-hover:bg-accent transition-colors shrink-0"
+                    >
+                      <Mail className="w-4 h-4 md:w-5 md:h-5" />
+                    </motion.div>
+                    <div className="min-w-0">
+                      <p className="text-[10px] uppercase text-foreground/60 tracking-widest">{t.contact.email}</p>
+                      <p className="text-sm md:text-lg font-heading truncate">{portfolioData.contact.email}</p>
+                    </div>
                   </motion.div>
-                  <div>
-                    <p className="text-[10px] uppercase text-foreground/60 tracking-widest">{t.contact.address}</p>
-                    <p className="text-sm md:text-lg font-heading leading-tight">{portfolioData.contact.address}</p>
-                  </div>
-                </motion.div>
+
+                  <motion.div whileHover="hover" className="flex items-center gap-4 group">
+                    <motion.div 
+                      variants={{
+                        hover: { y: -5, transition: { type: "spring", stiffness: 400, damping: 10 } }
+                      }}
+                      className="w-10 h-10 md:w-12 md:h-12 rounded-full glass flex items-center justify-center group-hover:bg-accent transition-colors shrink-0"
+                    >
+                      <MapPin className="w-4 h-4 md:w-5 md:h-5" />
+                    </motion.div>
+                    <div>
+                      <p className="text-[10px] uppercase text-foreground/60 tracking-widest">{t.contact.address}</p>
+                      <p className="text-sm md:text-lg font-heading leading-tight">{portfolioData.contact.address}</p>
+                    </div>
+                  </motion.div>
+                </div>
               </CardContent>
             </Card>
           </div>
