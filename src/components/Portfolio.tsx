@@ -15,7 +15,6 @@ const SectionTitle = ({ number, title }: { number: string; title: string }) => (
     <motion.h2 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="text-display text-3xl sm:text-5xl lg:text-6xl xl:text-8xl block leading-none"
     >
@@ -71,7 +70,7 @@ export default function Portfolio() {
       <div className="fixed inset-0 pointer-events-none z-50 bg-noise" />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 overflow-hidden border-b border-foreground/10 py-20">
+      <section className="relative h-screen flex flex-col justify-center px-6 md:px-12 overflow-hidden border-b border-foreground/10">
         <div className="absolute top-8 md:top-12 left-6 md:left-12 z-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -265,10 +264,10 @@ export default function Portfolio() {
         <div className="space-y-12">
           {t.data.experience.map((exp, index) => (
             <motion.div
-              key={`${exp.company}-${index}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              key={exp.company}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               className="group relative"
             >
               <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 py-12 border-b border-foreground/10 group-hover:border-accent transition-colors">
