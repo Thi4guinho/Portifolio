@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thiago Bassi | Portfólio Profissional</title>
+    <style>
+      body { background-color: #050505; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif; }
+      .loader { border: 2px solid #333; border-top: 2px solid #F27D26; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; }
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loader"></div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
