@@ -214,7 +214,7 @@ export const translations = {
     data: {
       role: "Profesional Multidisciplinar",
       summary: "Profesional dedicado, con un fuerte sentido de la ética y el compromiso. Me destaco por mis habilidades de comunicación, proactividad y capacidad de adaptación a nuevos entornos y desafíos.",
-      objective: "Busco integrarme en equipos onde possa aplicar mi excelencia profesional y ganas de aprender, enfocándome siempre en la entrega de resultados de calidad y en el buen servicio a las necesidades de la empresa.",
+      objective: "Busco integrarme en equipos donde pueda aplicar mi excelencia profesional y ganas de aprender, enfocándome siempre en la entrega de resultados de calidad y en el buen servicio a las necesidades de la empresa.",
       experience: [
         {
           company: "Adidas",
